@@ -1,17 +1,248 @@
 [
   {
-    "name": "Buc-ee's - New Braunfels, TX",
-    "latitude": 29.6989,
-    "longitude": -98.0454
+    "name": "Buc-ee's Athens",
+    "endereco": "2328 Lindsay Lane South, Athens, Alabama 35613",
+    "latitude": 34.727583,
+    "longitude": -86.933433
   },
   {
-    "name": "Buc-ee's - Daytona Beach, FL",
-    "latitude": 29.1850,
-    "longitude": -81.0705
+    "name": "Buc-ee's Auburn",
+    "endereco": "2500 Buc-ee’s Blvd, Auburn, Alabama 36832",
+    "latitude": 32.5520992,
+    "longitude": -85.526638
   },
   {
-    "name": "Buc-ee's - Katy, TX",
-    "latitude": 29.7858,
-    "longitude": -95.8240
+    "name": "Buc-ee's Leeds",
+    "endereco": "6900 Buc-ee’s Blvd, Leeds, Alabama 35094",
+    "latitude": 33.567,
+    "longitude": -86.528
+  },
+  {
+    "name": "Buc-ee's Loxley",
+    "endereco": "20403 County Rd. 68, Robertsdale, Alabama 36567",
+    "latitude": 30.563,
+    "longitude": -87.684
+  },
+  {
+    "name": "Buc-ee's Johnstown",
+    "endereco": "5201 Nugget Road, Berthoud, Colorado 80513",
+    "latitude": 40.301,
+    "longitude": -104.998
+  },
+  {
+    "name": "Buc-ee's Daytona Beach",
+    "endereco": "2330 Gateway North Drive, Daytona Beach, Florida 32117",
+    "latitude": 29.22402595,
+    "longitude": -81.10103704
+  },
+  {
+    "name": "Buc-ee's Saint Augustine",
+    "endereco": "200 World Commerce Pkwy, Saint Augustine, Florida 32092",
+    "latitude": 29.98054,
+    "longitude": -81.46095
+  },
+  {
+    "name": "Buc-ee's Brunswick",
+    "endereco": "6900 Hwy 99, Brunswick, Georgia 31525",
+    "latitude": 31.169,
+    "longitude": -81.798
+  },
+  {
+    "name": "Buc-ee's Calhoun",
+    "endereco": "601 Union Grove Rd. SE, Adairsville, Georgia 30103",
+    "latitude": 34.347,
+    "longitude": -84.931
+  },
+  {
+    "name": "Buc-ee's Warner Robins",
+    "endereco": "7001 Russell Parkway, Fort Valley, Georgia 31030",
+    "latitude": 32.531,
+    "longitude": -83.649
+  },
+  {
+    "name": "Buc-ee's Richmond KY",
+    "endereco": "1013 Buc-ee's Boulevard, Richmond, Kentucky 40475",
+    "latitude": 37.738,
+    "longitude": -84.292
+  },
+  {
+    "name": "Buc-ee's Smiths Grove",
+    "endereco": "4001 Smiths Grove-Scottsville Road, Smiths Grove, Kentucky 42171",
+    "latitude": 37.010,
+    "longitude": -86.309
+  },
+  {
+    "name": "Buc-ee's Harrison County MS",
+    "endereco": "8245 Firetower Road, Pass Christian, Mississippi 39571",
+    "latitude": 30.373,
+    "longitude": -89.197
+  },
+  {
+    "name": "Buc-ee's Springfield MO",
+    "endereco": "3284 N Beaver Rd, Springfield, Missouri 65803",
+    "latitude": 37.251,
+    "longitude": -93.314
+  },
+  {
+    "name": "Buc-ee's Florence SC",
+    "endereco": "3390 North Williston Road, Florence, South Carolina 29506",
+    "latitude": 34.189,
+    "longitude": -79.759
+  },
+  {
+    "name": "Buc-ee's Crossville TN",
+    "endereco": "2045 Genesis Road, Crossville, Tennessee 38555",
+    "latitude": 35.946,
+    "longitude": -85.019
+  },
+  {
+    "name": "Buc-ee's Sevierville TN",
+    "endereco": "170 Buc-ee’s Blvd, Kodak, Tennessee 37764",
+    "latitude": 35.987,
+    "longitude": -83.553
+  },
+  {
+    "name": "Buc-ee's Rockingham County VA",
+    "endereco": "6500 Buc-ee's Blvd, Mount Crawford, Virginia 22841",
+    "latitude": 38.426,
+    "longitude": -78.877
+  },
+  {
+    "name": "Buc-ee's Alvin TX",
+    "endereco": "780 Hwy-35 N Byp, Alvin, Texas 77511",
+    "latitude": 29.414,
+    "longitude": -95.217
+  },
+  {
+    "name": "Buc-ee's Amarillo TX",
+    "endereco": "9900 East Interstate 40, Amarillo, Texas 79118",
+    "latitude": 35.232,
+    "longitude": -101.704
+  },
+  {
+    "name": "Buc-ee's Angleton TX",
+    "endereco": "2299 E Mulberry St, Angleton, Texas 77515",
+    "latitude": 29.174,
+    "longitude": -95.433
+  },
+  {
+    "name": "Buc-ee's Angleton TX",
+    "endereco": "931 Loop 274, Angleton, Texas 77515",
+    "latitude": 29.174,
+    "longitude": -95.433
+  },
+  {
+    "name": "Buc-ee's Angleton TX",
+    "endereco": "2304 W Mulberry St, Angleton, Texas 77515",
+    "latitude": 29.174,
+    "longitude": -95.433
+  },
+  {
+    "name": "Buc-ee's Bastrop TX",
+    "endereco": "1700 Highway 71 East, Bastrop, Texas 78602",
+    "latitude": 30.101,
+    "longitude": -97.314
+  },
+  {
+    "name": "Buc-ee's Baytown TX",
+    "endereco": "4080 East Freeway, Baytown, Texas 77521",
+    "latitude": 29.735,
+    "longitude": -94.977
+  },
+  {
+    "name": "Buc-ee's Brazoria TX",
+    "endereco": "801 N Brooks, Brazoria, Texas 77422",
+    "latitude": 29.064,
+    "longitude": -95.612
+  },
+  {
+    "name": "Buc-ee's Cypress TX",
+    "endereco": "27106 US-290, Cypress, Texas 77433",
+    "latitude": 29.799,
+    "longitude": -95.709
+  },
+  {
+    "name": "Buc-ee's Denton TX",
+    "endereco": "2800 S Interstate 35 E, Denton, Texas 76210",
+    "latitude": 33.199,
+    "longitude": -97.148
+  },
+  {
+    "name": "Buc-ee's Eagle Lake TX",
+    "endereco": "505 E Main St, Eagle Lake, Texas 77434",
+    "latitude": 29.718,
+    "longitude": -96.261
+  },
+  {
+    "name": "Buc-ee's Ennis TX",
+    "endereco": "1402 South IH-45, Ennis, Texas 75119",
+    "latitude": 32.322,
+    "longitude": -96.625
+  },
+  {
+    "name": "Buc-ee's Fort Worth TX",
+    "endereco": "15901 N Freeway, Fort Worth, Texas 76177",
+    "latitude": 32.897,
+    "longitude": -97.303
+  },
+  {
+    "name": "Buc-ee's Freeport TX",
+    "endereco": "4231 E. Hwy 332, Freeport, Texas 77541",
+    "latitude": 28.951,
+    "longitude": -95.358
+  },
+  {
+    "name": "Buc-ee's Freeport TX",
+    "endereco": "1002 N Brazosport Blvd., Freeport, Texas 77541",
+    "latitude": 28.951,
+    "longitude": -95.358
+  },
+  {
+    "name": "Buc-ee's Giddings TX",
+    "endereco": "2375 E Austin St, Giddings, Texas 78942",
+    "latitude": 30.167,
+    "longitude": -96.937
+  },
+  {
+    "name": "Buc-ee's Hillsboro TX",
+    "endereco": "165 State Highway 77, Hillsboro, Texas 76645",
+    "latitude": 32.004,
+    "longitude": -97.125
+  },
+  {
+    "name": "Buc-ee's Katy TX",
+    "endereco": "27700 Katy Fwy, Katy, Texas 77494",
+    "latitude": 29.780,
+    "longitude": -95.825
+  },
+  {
+    "name": "Buc-ee's Lake Jackson TX",
+    "endereco": "899 Oyster Creek Drive, Lake Jackson, Texas 77566",
+    "latitude": 29.039,
+    "longitude": -95.438
+  },
+  {
+    "name": "Buc-ee's Lake Jackson TX",
+    "endereco": "101 N Hwy 2004, Lake Jackson, Texas 77566",
+    "latitude": 29.039,
+    "longitude": -95.438
+  },
+  {
+    "name": "Buc-ee's Lake Jackson TX",
+    "endereco": "598 Hwy 332, Lake Jackson, Texas 77566",
+    "latitude": 29.039,
+    "longitude": -95.438
+  },
+  {
+    "name": "Buc-ee's League City TX",
+    "endereco": "1702 League City Pkwy, League City, Texas 77573",
+    "latitude": 29.507,
+    "longitude": -95.085
+  },
+  {
+    "name": "Buc-ee's Luling TX",
+    "endereco": "10070 West IH 10, Luling, Texas 78648",
+    "latitude": 29.688,
+    "longitude": -97.59235743353787
   }
 ]
