@@ -1,0 +1,11 @@
+{
+  "name": "bucees-locator",
+  "version": "0.1.0",
+  "description": "Simple map of Buc-ee's locations using Leaflet",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npx http-server public -p 8080",
+    "dev": "npx http-server public -o"
+  },
+  "license": "MIT"
+}
