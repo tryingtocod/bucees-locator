@@ -4,13 +4,26 @@
   <meta charset="UTF-8">
   <title>Buc-ee's Locator</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css"/>
-  <style>
-    #map { height: 100vh; width: 100%; }
-  </style>
 </head>
 <body>
-  <h1>Buc-ee's Locator</h1>
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <img src="assets/img/bucees-logo.png" alt="Buc-ee's logo" class="logo">
+      <div class="title">
+        <h1>Buc-ee's Locator</h1>
+        <p class="subtitle">Find Buc-ee's across the US</p>
+      </div>
+    </div>
+    <div class="controls" role="search">
+      <input id="search" type="search" placeholder="Search by city or name" aria-label="Search locations">
+      <select id="state-filter" aria-label="Filter by state">
+        <option value="">All states</option>
+      </select>
+    </div>
+  </header>
+
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
