@@ -1,19 +1,29 @@
+:root {
+  --accent: #e33b3b; /* Buc-ee's red accent */
+  --accent-2: #ff8f6b; /* warm secondary */
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --header-bg: linear-gradient(90deg, rgba(255,143,107,0.12), rgba(227,59,59,0.06));
+}
+
 body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: #f8fafc;
 }
 
 .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
-    background: #ffffff;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    padding: 10px 16px;
+    background: var(--header-bg);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
     z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .brand {
@@ -23,19 +33,24 @@ body {
 }
 
 .logo {
-    height:40px;
+    height:42px;
     width:auto;
+    border-radius:6px;
+    background: rgba(255,255,255,0.9);
+    padding:4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .title h1 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    color: #111827;
 }
 
 .subtitle {
     margin: 0;
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 0.8rem;
+    color: var(--muted);
 }
 
 .controls {
@@ -46,20 +61,49 @@ body {
 
 #search {
     padding:8px 10px;
-    border-radius:6px;
-    border:1px solid #ccc;
-    min-width:200px;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.08);
+    min-width:220px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: box-shadow 150ms, border-color 150ms;
+}
+
+#search:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(227,59,59,0.08);
 }
 
 #state-filter {
     padding:8px;
-    border-radius:6px;
-    border:1px solid #ccc;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+.results-badge {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: white;
+    padding:6px 10px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.85rem;
+    box-shadow: 0 4px 10px rgba(227,59,59,0.12);
+    transform-origin: right center;
+    transition: transform 180ms ease, opacity 180ms;
 }
 
 #map {
     flex: 1;
     width: 100%;
+}
+
+/* Leaflet popup polish */
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+}
+.leaflet-popup-content h3, .leaflet-popup-content b {
+    color: var(--accent);
 }
 
 @media (max-width: 600px) {
@@ -70,6 +114,18 @@ body {
   }
   .controls {
     justify-content: space-between;
+    gap: 6px;
   }
   #search { width: 100%; min-width: 0; }
+}
+
+/* subtle pulse when results update */
+.results-update {
+  animation: resultsPulse 420ms ease;
+}
+
+@keyframes resultsPulse {
+  0% { transform: scale(1); opacity: 0.9 }
+  40% { transform: scale(1.08); opacity: 1 }
+  100% { transform: scale(1); opacity: 1 }
 }

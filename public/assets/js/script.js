@@ -43,9 +43,22 @@ function renderMarkers(filterText = '', stateFilter = '') {
     markersLayer.addLayer(marker);
   });
 
+  // update results count UI
+  const countEl = document.getElementById('results-count');
+  if (countEl) {
+    countEl.textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
+    // add temporary animation class
+    countEl.classList.remove('results-update');
+    void countEl.offsetWidth; // force reflow
+    countEl.classList.add('results-update');
+  }
+
   if (filtered.length) {
     const group = L.featureGroup(filtered.map(s => L.marker([s.latitude, s.longitude])));
     map.fitBounds(group.getBounds(), { padding: [40, 40] });
+  } else {
+    // no results: return to default view
+    map.setView([31.0, -97.0], 5);
   }
 }
 
