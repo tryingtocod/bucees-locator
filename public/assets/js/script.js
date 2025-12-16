@@ -82,9 +82,27 @@ function populateStateFilter() {
   });
 }
 
+// helper to attempt fetching from multiple paths (robust across deploys)
+function fetchJsonFromPaths(paths) {
+  return paths.reduce((p, path) => {
+    return p.catch(() => fetch(path).then(r => {
+      if (!r.ok) throw new Error('not ok');
+      return r.json();
+    }));
+  }, Promise.reject());
+}
+
 // load data and initialize UI
-fetch('data/bucees.json')
-  .then(response => response.json())
+const possiblePaths = [
+  'data/bucees.json',
+  './data/bucees.json',
+  '/data/bucees.json',
+  'public/data/bucees.json',
+  './public/data/bucees.json',
+  '/public/data/bucees.json'
+];
+
+fetchJsonFromPaths(possiblePaths)
   .then(data => {
     stores = data.map(s => ({ ...s, state: parseState(s.endereco) }));
     populateStateFilter();
@@ -134,4 +152,8 @@ fetch('data/bucees.json')
       });
     }
   })
-  .catch(error => console.error('Error loading JSON:', error));
+  .catch(error => {
+    console.error('Error loading JSON from any path:', error);
+    const countEl = document.getElementById('results-count');
+    if (countEl) countEl.textContent = '0 results (data unavailable)';
+  });
