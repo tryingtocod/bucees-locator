@@ -14,7 +14,8 @@ var buceesIcon = L.icon({
   popupAnchor: [0, -40]
 });
 
-var markersLayer = L.layerGroup().addTo(map);
+var markerCluster = L.markerClusterGroup();
+map.addLayer(markerCluster);
 var stores = [];
 
 function parseState(endereco) {
@@ -40,7 +41,7 @@ function renderMarkers(filterText = '', stateFilter = '') {
   filtered.forEach(store => {
     const marker = L.marker([store.latitude, store.longitude], { icon: buceesIcon })
       .bindPopup(`<b>${store.name}</b><br>${store.endereco}`);
-    markersLayer.addLayer(marker);
+    markerCluster.addLayer(marker);
   });
 
   // update results count UI
@@ -53,9 +54,8 @@ function renderMarkers(filterText = '', stateFilter = '') {
     countEl.classList.add('results-update');
   }
 
-  if (filtered.length) {
-    const group = L.featureGroup(filtered.map(s => L.marker([s.latitude, s.longitude])));
-    map.fitBounds(group.getBounds(), { padding: [40, 40] });
+  if (markerCluster.getLayers().length) {
+    map.fitBounds(markerCluster.getBounds(), { padding: [40, 40] });
   } else {
     // no results: return to default view
     map.setView([31.0, -97.0], 5);
@@ -96,5 +96,42 @@ fetch('data/bucees.json')
     const update = debounce(() => renderMarkers(searchEl.value, stateEl.value), 200);
     searchEl.addEventListener('input', update);
     stateEl.addEventListener('change', update);
+
+    // locate button: try plugin, else fallback to geolocation
+    const locateBtn = document.getElementById('locate-btn');
+    if (locateBtn) {
+      locateBtn.addEventListener('click', () => {
+        // prefer plugin if available
+        if (typeof L.control.locate === 'function') {
+          L.control.locate({
+            flyTo: true,
+            keepCurrentZoomLevel: false,
+            strings: { title: 'Show my location' }
+          }).addTo(map).start();
+          return;
+        }
+
+        // fallback: browser geolocation
+        if (!navigator.geolocation) {
+          alert('Geolocation is not available in your browser');
+          return;
+        }
+        locateBtn.disabled = true;
+        locateBtn.textContent = '…';
+        navigator.geolocation.getCurrentPosition(pos => {
+          const lat = pos.coords.latitude;
+          const lon = pos.coords.longitude;
+          map.setView([lat, lon], 12);
+          const temp = L.circle([lat, lon], { radius: 200, color: '#f97373', fillColor: '#fecaca', fillOpacity: 0.4 }).addTo(map);
+          setTimeout(() => map.removeLayer(temp), 6000);
+          locateBtn.disabled = false;
+          locateBtn.textContent = '📍';
+        }, err => {
+          alert('Unable to retrieve your location');
+          locateBtn.disabled = false;
+          locateBtn.textContent = '📍';
+        });
+      });
+    }
   })
   .catch(error => console.error('Error loading JSON:', error));
